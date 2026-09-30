@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Parole+ — Entraînement au langage</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main id="app">
+
+  <!-- ÉTAPE 0 : ACCUEIL -->
+  <section class="screen active" id="screen-home">
+    <div class="card">
+      <h1 class="logo">Parole<span>+</span></h1>
+      <p class="tagline">Chaque mot compte. Chaque progrès compte.</p>
+      <p class="intro">Une petite séance pour entraîner progressivement la compréhension, les mots et les phrases.</p>
+      <button class="btn btn-big" id="btn-start">▶ Commencer la séance</button>
+      <button class="btn btn-ghost" id="btn-progress">📊 Ma progression</button>
+      <p class="disclaimer">Parole+ est un outil complémentaire d'entraînement et ne remplace pas l'accompagnement d'un professionnel de santé.</p>
+    </div>
+  </section>
+
+  <!-- MA PROGRESSION -->
+  <section class="screen" id="screen-progress">
+    <div class="card">
+      <h2>📊 Ma progression</h2>
+      <ul class="stats" id="progress-list"></ul>
+      <p class="note">Ces chiffres suivent seulement votre activité dans l'application.</p>
+      <button class="btn btn-ghost" id="btn-progress-back">🏠 Retour à l'accueil</button>
+    </div>
+  </section>
+
+  <!-- ÉTAPE 1 : ÉCHAUFFEMENT / RECONNAÎTRE -->
+  <section class="screen" id="screen-warmup">
+    <div class="card">
+      <h2 id="warmup-title">🔥 Échauffement</h2>
+      <p class="soft" id="warmup-sub">Commençons doucement.</p>
+      <div class="emoji" id="warmup-emoji">🍎</div>
+      <p class="question">Quel est cet objet ?</p>
+      <div class="choices" id="warmup-choices"></div>
+      <p class="feedback" id="warmup-feedback"></p>
+      <button class="btn btn-next hidden" id="warmup-next">Continuer →</button>
+    </div>
+  </section>
+
+  <!-- ÉTAPE 2 : NOMMER -->
+  <section class="screen" id="screen-name">
+    <div class="card">
+      <h2>🖼️ Je nomme l'objet</h2>
+      <div class="emoji" id="name-emoji">🍎</div>
+      <p class="question">Qu'est-ce que c'est ?</p>
+      <p class="soft">🎤 Essaie de dire le mot</p>
+      <div class="row">
+        <button class="btn btn-mic" id="name-mic">🎤 Parler</button>
+        <button class="btn btn-ghost" id="name-reveal">👁️ Voir la réponse</button>
+      </div>
+      <p class="feedback" id="name-feedback"></p>
+      <button class="btn btn-next" id="name-next">Continuer →</button>
+    </div>
+  </section>
+
+  <!-- ÉTAPE 3 : RÉPÉTER -->
+  <section class="screen" id="screen-repeat">
+    <div class="card">
+      <h2>🔊 Écoute et répète</h2>
+      <p class="sentence" id="repeat-sentence">Je mange.</p>
+      <div class="row">
+        <button class="btn" id="repeat-listen">🔊 Écouter</button>
+        <button class="btn btn-mic" id="repeat-mic">🎤 À ton tour</button>
+      </div>
+      <p class="soft">Essaie de répéter la phrase.</p>
+      <p class="feedback" id="repeat-feedback"></p>
+      <button class="btn btn-next" id="repeat-next">Continuer →</button>
+    </div>
+  </section>
+
+  <!-- ÉTAPE 4 : CONSTRUIRE -->
+  <section class="screen" id="screen-build">
+    <div class="card">
+      <h2>🧩 Construis la phrase</h2>
+      <div class="build-zone" id="build-zone"></div>
+      <div class="choices" id="build-words"></div>
+      <div class="row">
+        <button class="btn btn-ghost" id="build-clear">🔄 Effacer</button>
+        <button class="btn" id="build-check">✓ Vérifier</button>
+      </div>
+      <p class="feedback" id="build-feedback"></p>
+      <button class="btn btn-next hidden" id="build-next">Continuer →</button>
+    </div>
+  </section>
+
+  <!-- ÉTAPE 5 : COMMUNICATION -->
+  <section class="screen" id="screen-talk">
+    <div class="card">
+      <h2>💬 Je veux...</h2>
+      <div class="choices grid" id="talk-choices"></div>
+      <p class="sentence" id="talk-sentence"></p>
+      <div class="row">
+        <button class="btn hidden" id="talk-listen">🔊 Écouter</button>
+        <button class="btn btn-mic hidden" id="talk-mic">🎤 Essaie de le dire</button>
+      </div>
+      <p class="feedback" id="talk-feedback"></p>
+      <button class="btn btn-next" id="talk-next">Terminer →</button>
+    </div>
+  </section>
+
+  <!-- ÉTAPE 6 : RÉSULTAT -->
+  <section class="screen" id="screen-end">
+    <div class="card">
+      <h2>🎉 Séance terminée !</h2>
+      <ul class="stats" id="end-stats"></ul>
+      <p class="soft">Progression de la séance</p>
+      <div class="bar"><div class="bar-fill" id="end-bar"></div></div>
+      <p class="percent" id="end-percent">0 %</p>
+      <p class="intro">Bravo pour tes efforts ! Continue progressivement.</p>
+      <button class="btn btn-big" id="end-restart">🔄 Recommencer</button>
+      <button class="btn btn-ghost" id="end-home">🏠 Retour à l'accueil</button>
+    </div>
+  </section>
+
+  <footer class="steps" id="steps-bar"></footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
