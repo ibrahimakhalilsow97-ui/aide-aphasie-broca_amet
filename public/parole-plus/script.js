@@ -55,7 +55,8 @@ const communication = [
 
 /* ---------- 2. ÉTAT DE LA SÉANCE ---------- */
 
-const ECRANS = ["home", "warmup", "name", "repeat", "build", "talk", "end"];
+const ECRANS = ["home", "warmup", "name", "repeat", "build", "talk", "end", "progress"];
+const NB_ETAPES = 7; // les écrans du parcours (hors "progression")
 
 let currentStep = 0;        // index de l'écran affiché
 let indexWarmup = 0;        // exercice de reconnaissance en cours
@@ -90,7 +91,7 @@ function showScreen(nom) {
 function updateProgress() {
   const bar = $("steps-bar");
   bar.innerHTML = "";
-  for (let i = 1; i < ECRANS.length; i++) {
+  for (let i = 1; i < NB_ETAPES; i++) {
     const d = document.createElement("span");
     d.className = "dot" + (i <= currentStep ? " on" : "");
     bar.appendChild(d);
@@ -468,10 +469,6 @@ function startSession() {
   showWarmup();
   showScreen("warmup");
 }
-
-// L'écran "progression" n'est pas une étape du parcours :
-// on l'ajoute à la liste pour pouvoir l'afficher simplement.
-ECRANS.push("progress");
 
 // Branchement des boutons
 $("btn-start").onclick = startSession;
