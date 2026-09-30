@@ -11,13 +11,20 @@
 
   <!-- ÉTAPE 0 : ACCUEIL -->
   <section class="screen active" id="screen-home">
-    <div class="card">
+    <div class="home-topline" aria-hidden="true">
+      <span>Parole<span class="plus">+</span></span>
+      <span class="home-topline-note">Entraînement au langage</span>
+    </div>
+    <div class="card home-card">
+      <p class="home-kicker">Votre séance du jour</p>
       <h1 class="logo">Parole<span>+</span></h1>
-      <p class="tagline">Chaque mot compte. Chaque progrès compte.</p>
-      <p class="intro">Une petite séance pour entraîner progressivement la compréhension, les mots et les phrases.</p>
-      <button class="btn btn-big" id="btn-start">▶ Commencer la séance</button>
-      <button class="btn btn-ghost" id="btn-progress">📊 Ma progression</button>
-      <p class="disclaimer">Parole+ est un outil complémentaire d'entraînement et ne remplace pas l'accompagnement d'un professionnel de santé.</p>
+      <p class="tagline">Chaque mot compte.<br />Chaque progrès compte.</p>
+      <p class="intro">Entraînez la compréhension, les mots et les phrases, à votre rythme.</p>
+      <div class="home-actions">
+        <button class="btn btn-big" id="btn-start">Commencer la séance <span aria-hidden="true">→</span></button>
+        <button class="btn btn-ghost" id="btn-progress">Ma progression</button>
+      </div>
+      <p class="disclaimer">Un outil complémentaire qui ne remplace pas l'accompagnement d'un professionnel de santé.</p>
     </div>
   </section>
 
