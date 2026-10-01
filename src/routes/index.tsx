@@ -28,7 +28,7 @@ function Index() {
       src="/parole-plus/index.html"
       title="Parole+"
       allow="microphone"
-      className="h-screen w-screen border-0"
+      className="block h-dvh min-h-screen w-full max-w-full border-0"
     />
   );
 }
